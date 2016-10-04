@@ -1,0 +1,39 @@
+{
+  "name": "mypersonalspace",
+  "version": "0.1.0",
+  "description": "My personal blog",
+  "main": "./app/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/supran2811/MyPersonalSpace.git"
+  },
+  "keywords": [
+    "Blog",
+    "personal"
+  ],
+  "author": "Supran",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/supran2811/MyPersonalSpace/issues"
+  },
+  "homepage": "https://github.com/supran2811/MyPersonalSpace#readme",
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-core": "^6.17.0",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.16.0",
+    "css-loader": "^0.25.0",
+    "raw-loader": "^0.5.1",
+    "webpack": "^1.13.2",
+    "webpack-core": "^0.6.8",
+    "webpack-dev-server": "^1.16.1"
+  },
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-ui-router": "^0.3.1"
+  }
+}
