@@ -1,21 +1,36 @@
 
 
-const angular = require('angular');
-require('angular-ui-router');
+import angular from 'angular';
+import registerProfile from './profile';
+import registerNotes from './notes';
 
+require('./notes/create');
 
-var ngModule = angular.module('dashboard' ,[
+const ngModule = angular.module('dashboard' ,[
+    'CreateDashboard'
 ]);
 
 
-require('./profile')(ngModule);
+registerProfile(ngModule);
+registerNotes(ngModule);
 
 ngModule.config(function($stateProvider){
 
-    $stateProvider.state("dashboard" ,{
+    $stateProvider.state("app.dashboard" ,{
         url : "/",
-        template: require('./dashboard.tmpl.html')
+        views:{
+            "main@":{
+                template: require('./dashboard.tmpl.html'),
+                controller : "DashboardCtrl as dashboardCtrl"
+            }
+        }
+        
         
     });
         
+})
+.controller("DashboardCtrl" ,function(){
+
+    var dashboardCtrl = this;
+    dashboardCtrl.name = "Supran";
 });

@@ -1,16 +1,20 @@
 
+export default ngModule => {
 
-
-module.exports = function(ngModule){
-
-ngModule.directive("profileInfo" , function(){
+ngModule.controller("ProfileCtrl", function(){
+        
+})
+.directive("profileInfo" , function(){
 
     return (
         {
             restrict : 'AE',
-            template : require("./profile.tmpl.html")
+            template : require("./profile.tmpl.html"),
+            controller : "ProfileCtrl",
+            controllerAs: "profileCtrl"
         }
     );
 })
+
 }
  
