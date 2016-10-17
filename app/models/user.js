@@ -1,17 +1,22 @@
 angular.module("app.model.user" , [])
-.service('UserModel',function($http){
+.service('UserModel',function($http,$q){
     var model = this;
 
 
-    model.register = function(user){
+    model.add = function(user){
         console.log("Inside register");
         console.log(user);
+
+        var defered = $q.defer();
+
+
         $http.post('http://localhost:1337/user',user).then(function(data){
-                console.log('sucess');
-                console.log(data);
+            defered.resolve(data.status);
         },function(error){
-            console.log(error);
-        })
+            defered.reject(error);
+        });
+
+        return defered.promise;
     }
 
 })

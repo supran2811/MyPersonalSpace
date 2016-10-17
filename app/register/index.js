@@ -19,12 +19,55 @@ ngModule.config(function($stateProvider){
             }
         }
     })
+    .state('app.register.sucess',{
+        url:"/sucess",
+        views:{
+            'main@':{
+                template:require('./register.sucess.tmpl.html'),
+                controller : "SucessCtrl as sucessCtrl"
+            }
+        }
+    })
+    .state('app.register.error',{
+        url:"/error",
+        views:{
+            'main@':{
+                template:require('./register.error.tmpl.html'),
+                controller : "ErrorCtrl as errorCtrl"
+            }
+        }
+    })
+
 })
-.controller('RegisterCtrl' , function(UserModel){
+.controller('RegisterCtrl' , function(UserModel,$state){
     //console.log(this);
     var registerCtrl = this;
     // console.log(registerCtrl);
    // registerCtrl.user = {firstname:""};
 
-    registerCtrl.register  = UserModel.register;
-});
+    registerCtrl.register  = function(user){
+
+            UserModel.add(user).then(function(data){
+                console.log(data);
+
+                if(data === 201){
+                    $state.go('app.register.sucess');
+
+                } 
+                else{   $state.go('app.register.error');}
+                     
+            },function(error){
+                cosole.log("No!!!");
+                $state.go('app.register.error');
+            });
+
+    }
+})
+.controller('SucessCtrl',function(){
+    var sucessCtrl = this;
+    sucessCtrl.message = "Thanks for register!";
+})
+.controller('ErrorCtrl',function(){
+    var errorCtrl = this;
+    errorCtrl.message = "Error in register";
+})
