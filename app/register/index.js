@@ -47,17 +47,17 @@ ngModule.config(function($stateProvider){
 
     registerCtrl.register  = function(user){
 
-            UserModel.add(user).then(function(data){
+            UserModel.register(user).then(function(data){
                 console.log(data);
 
-                if(data === 201){
+                if(data === 200){
                     $state.go('app.register.sucess');
 
                 } 
                 else{   $state.go('app.register.error');}
                      
             },function(error){
-                cosole.log("No!!!");
+                console.log("No!!!");
                 $state.go('app.register.error');
             });
 

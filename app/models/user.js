@@ -1,16 +1,16 @@
 angular.module("app.model.user" , [])
 .service('UserModel',function($http,$q){
-    var model = this;
+    var model = this,
+    loggedInUser = {};
 
-
-    model.add = function(user){
+    model.register = function(user){
         console.log("Inside register");
         console.log(user);
 
         var defered = $q.defer();
 
 
-        $http.post('http://localhost:1337/user',user).then(function(data){
+        $http.post('http://localhost:1337/user/register',user).then(function(data){
             defered.resolve(data.status);
         },function(error){
             defered.reject(error);
@@ -19,4 +19,27 @@ angular.module("app.model.user" , [])
         return defered.promise;
     }
 
+   model.login = function(user){
+        console.log("Inside login");
+        console.log(user);
+        var defered = $q.defer();
+
+        $http.post('http://localhost:1337/user/login',user).then(function(data){
+                defered.resolve(data);
+        },function(error){
+            defered.reject(error);
+        });
+
+        return defered.promise;
+        
+   }
+
+   model.setLoggedInUser = function(user){
+        console.log(user);
+        loggedInUser = user;
+   }
+
+   model.getLoggedinUser = function(){
+       return loggedInUser;
+   }
 })

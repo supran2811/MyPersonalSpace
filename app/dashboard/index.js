@@ -7,7 +7,7 @@ import registerNotes from './notes';
 require('./notes/create');
 
 const ngModule = angular.module('dashboard' ,[
-    'CreateDashboard'
+    'app.model.user'
 ]);
 
 
@@ -29,8 +29,11 @@ ngModule.config(function($stateProvider){
     });
         
 })
-.controller("DashboardCtrl" ,function(){
+.controller("DashboardCtrl" ,function(UserModel){
 
     var dashboardCtrl = this;
-    dashboardCtrl.name = "Supran";
+    
+    dashboardCtrl.user = UserModel.getLoggedinUser();
+
+
 });

@@ -1,6 +1,9 @@
-import angular from 'angular'
+import angular from 'angular';
+import '../dashboard';
 
-const ngModule = angular.module("login",[]);
+const ngModule = angular.module("login",[
+     'dashboard'
+]);
 
 ngModule.config(function($stateProvider){
     $stateProvider.state("app.login",{
@@ -15,6 +18,17 @@ ngModule.config(function($stateProvider){
 
     })
 })
-.controller("LoginCtrl" , function($state){
+.controller("LoginCtrl" , function($state,UserModel){
     var loginCtrl = this;
+    loginCtrl.user = {username:"" , password:""};
+
+    loginCtrl.login  = function(user){
+        console.log(user);
+        UserModel.login(user).then(function(record){
+                UserModel.setLoggedInUser(record.data); 
+                $state.go('app.dashboard');       
+        },function(error){
+                console.log(error);
+        });
+    }
 })
