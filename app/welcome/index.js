@@ -2,7 +2,7 @@ import angular from 'angular';
 
 import "../login";
 import "../register";
-import "./index.less";
+
 
 var ngModule = angular.module('welcome',['login' ,'register']);
 

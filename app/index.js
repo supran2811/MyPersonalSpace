@@ -1,8 +1,10 @@
 import angular from 'angular';
-import bootstrap from "!style!css!less!bootstrap/less/bootstrap.less";
+//import 'bootstrap-sass';
+//import bootstrap from "!style!css!scss!bootstrap-sass/assets/stylesheets/bootstrap";
 import  'angular-ui-router';
 import './welcome';
-import './index.less';
+
+import '!style!css!sass!./index.scss';
 
 const ngModule = angular.module('App' , [
         'ui.router',

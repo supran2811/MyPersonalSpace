@@ -1,23 +1,21 @@
 
 
 import angular from 'angular';
-import registerProfile from './profile';
-import registerNotes from './notes';
+import registerItemList from './itemlist';
+import registerItemDetails from './itemlist/itemdetails';
 
-require('./notes/create');
 
 const ngModule = angular.module('dashboard' ,[
     'app.model.user'
 ]);
 
-
-registerProfile(ngModule);
-registerNotes(ngModule);
+registerItemList(ngModule);
+registerItemDetails(ngModule);
 
 ngModule.config(function($stateProvider){
 
     $stateProvider.state("app.dashboard" ,{
-        url : "/",
+        url : "/dashboard",
         views:{
             "main@":{
                 template: require('./dashboard.tmpl.html'),

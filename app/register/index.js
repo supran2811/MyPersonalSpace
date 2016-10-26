@@ -1,5 +1,5 @@
 import angular from 'angular';
-import "./index.less";
+
 import '../models/user'
 var ngModule = angular.module('register',[
     'app.model.user'
