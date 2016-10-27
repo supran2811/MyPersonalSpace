@@ -1,5 +1,8 @@
 //@import '~bootstrap/dist/css/bootstrap';
 $icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
+$navbar-inverse-bg : #089;
+$navbar-inverse-color: #ffffff;
+$navbar-inverse-link-color: #ffffff;
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
 @mixin vertical-align {
@@ -15,4 +18,5 @@ $icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
 
 .jumbotron {
     @include vertical-align();
+    background-color: #ffffff;
 }

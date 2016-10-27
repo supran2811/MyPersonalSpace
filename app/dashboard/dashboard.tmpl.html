@@ -1,11 +1,29 @@
-<div>
-    
-    <div class = "col-sm-4" item-list>
-        
-    </div>
+<div class="container-fluid">
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand">MyPersonalSpace</a>
+			</div>
 
-    <div class = "col-sm-8" item-details>
-        
-    </div>
+			<ul class="nav navbar-nav navbar-right">
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" id="fullname">{{dashboardCtrl.user.firstname}} {{dashboardCtrl.user.lastname?dashboardCtrl.user.lastname:""}} <span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a>My Profile</a></li>
+						<li><a>Change Password</a></li>
+						<li><a>Sign Out</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+	<div class="col-sm-3" sidenav item-list>
+
+	</div>
+
+	<div class="col-sm-9" item-details>
+
+	</div>
 
 </div>

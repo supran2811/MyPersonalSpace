@@ -3,10 +3,12 @@
 import angular from 'angular';
 import registerItemList from './itemlist';
 import registerItemDetails from './itemlist/itemdetails';
-
+import './index.scss';
+import './itemlist/itemdetails/create';
 
 const ngModule = angular.module('dashboard' ,[
-    'app.model.user'
+    'app.model.user',
+    'CreateItem'
 ]);
 
 registerItemList(ngModule);
@@ -27,11 +29,11 @@ ngModule.config(function($stateProvider){
     });
         
 })
-.controller("DashboardCtrl" ,function(UserModel){
+.controller("DashboardCtrl" ,function($state,UserModel){
 
     var dashboardCtrl = this;
     
     dashboardCtrl.user = UserModel.getLoggedinUser();
-
+    
 
 });

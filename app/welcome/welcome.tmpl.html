@@ -1,6 +1,19 @@
-<div class = "jumbotron">
-    <div class = "text-center">
-            <button type="button" class="btn btn-primary" ui-sref="app.login">Login</button>
-            <button type="button" class="btn btn-default" ui-sref="app.register">SignUp</button>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" ui-sref="app.welcome">MyPersonalSpace</a>
     </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a ui-sref="app.welcome">Home</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a ui-sref="app.register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a ui-sref="app.login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+  <h3>Welcome to your personal space</h3>
+  <p>Keep your personal things here secured</p>
 </div>
