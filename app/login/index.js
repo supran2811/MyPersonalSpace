@@ -1,5 +1,6 @@
 import angular from 'angular';
 import '../dashboard';
+import '!style!css!sass!./index.scss';
 
 const ngModule = angular.module("login",[
      'dashboard'

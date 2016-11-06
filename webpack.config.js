@@ -1,3 +1,4 @@
+
 module.exports = {
 
     context: __dirname,
@@ -14,13 +15,14 @@ module.exports = {
     module: {
         loaders: [
             {
-                test: /\.js$/,loader: 'babel',exclude: /node_modules/,
-                    query: {
+                test: /\.js$/, loader: 'babel', exclude: /node_modules/,
+                query: {
                     presets: ['es2015']
                 }
             },
             { test: /\.html$/, loader: 'raw', exclude: /node_modules/ },
             { test: /\.woff(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=application/font-woff" },
+            { test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "url-loader?limit=10000&mimetype=application/font-woff" },
             { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=application/octet-stream" },
             {
                 test: /\.woff2$/,
@@ -28,12 +30,12 @@ module.exports = {
             },
             { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: "file" },
             { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=image/svg+xml" },
-            { test: /bootstrap\/js\//, loader: 'imports?jQuery=jquery' },
+            { test: /bootstrap\/dist\/js\//, loader: 'imports?jQuery=jquery' },
             { test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$/, loader: 'file', exclude: /node_modules/ }
             ,
             {
                 test: /\.scss$/,
-                loaders: ["style", "css?sourceMap","sass?sourceMap"]
+                loaders: ["style", "css?sourceMap", "sass?sourceMap"]
             }
         ]
 

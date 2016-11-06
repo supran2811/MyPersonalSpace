@@ -1,7 +1,7 @@
 angular.module("app.model.user" , [])
 .service('UserModel',function($http,$q){
     var model = this,
-    loggedInUser = {};
+    loggedInUser = undefined;
 
     model.register = function(user){
         console.log("Inside register");
@@ -34,6 +34,10 @@ angular.module("app.model.user" , [])
         
    }
 
+   model.logout = function(){
+       loggedInUser = undefined;
+   }
+
    model.setLoggedInUser = function(user){
         console.log(user);
         loggedInUser = user;
@@ -41,5 +45,8 @@ angular.module("app.model.user" , [])
 
    model.getLoggedinUser = function(){
        return loggedInUser;
+   }
+   model.getLoggedInUserName = function(){
+       return loggedInUser? loggedInUser['username']:'';
    }
 })

@@ -1,6 +1,6 @@
 import angular from 'angular';
 
-import '../models/user'
+// import '../models/user'
 var ngModule = angular.module('register',[
     'app.model.user'
 ]);

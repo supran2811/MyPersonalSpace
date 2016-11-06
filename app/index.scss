@@ -1,8 +1,10 @@
 //@import '~bootstrap/dist/css/bootstrap';
+$fa-font-path: "~font-awesome/fonts";
 $icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
 $navbar-inverse-bg : #089;
 $navbar-inverse-color: #ffffff;
 $navbar-inverse-link-color: #ffffff;
+@import "~font-awesome/scss/font-awesome";
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
 @mixin vertical-align {

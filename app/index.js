@@ -3,6 +3,11 @@ import angular from 'angular';
 //import bootstrap from "!style!css!scss!bootstrap-sass/assets/stylesheets/bootstrap";
 import  'angular-ui-router';
 import './welcome';
+import './models/entry';
+import './models/user';
+
+import 'bootstrap/dist/js/bootstrap';
+
 
 import '!style!css!sass!./index.scss';
 
@@ -18,6 +23,5 @@ ngModule.config(function($stateProvider,$urlRouterProvider){
             url : "",
             abstract:true
         });
-
        $urlRouterProvider.otherwise("/welcome");
 });

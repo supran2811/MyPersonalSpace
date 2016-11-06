@@ -2,7 +2,13 @@
     <div ui-view>
 	<div>
 
-		<h3>this is Item Details</h3>
+		<div ng-if="itemDetailsCtrl.entry.name">
+
+			 Name :  {{itemDetailsCtrl.entry.id}}-{{itemDetailsCtrl.entry.name}} <br>
+			 ID : {{itemDetailsCtrl.entry.noteid}} <br>
+			 Password : {{itemDetailsCtrl.entry.pwd}} <br>
+		</div>
+		
 	</div>
 	
 		<button type="" id="addnew" class="btn btn-default glyphicon glyphicon-plus-sign" ui-sref="app.dashboard.create"></button>
